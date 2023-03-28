@@ -14,7 +14,7 @@ int convert_to_given_format(int n, int format, int is_upper_hex, int b)
 
 	char *str;
 
-	if (n < 0)
+	if (n <= 0)
 	{
 		len = convert_num(-n, b, is_upper_hex);
 		return (len);

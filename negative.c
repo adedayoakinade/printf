@@ -163,10 +163,15 @@ int _strlen(char *str)
  */
 int convert_num(int n, int bits, int upper)
 {
-	char *ptr, *p;
+	char *ptr, *p, c = '0';
 
 	int i = 0, j, len;
 
+	if (n == 0)
+	{
+		write(1, &c, 1);
+		return (1);
+	}
 	ptr = convert_back_to_10(n, bits, upper);
 	len = _strlen(ptr);
 	while (i < len && ptr[i] == '0')
