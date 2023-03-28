@@ -83,22 +83,22 @@ int _printf(const char *format, ...)
 					break;
 				case 'b':
 					n = va_arg(ap, int);
-					len = convert_to_given_format(n, 2, 0);
+					len = convert_to_given_format(n, 2, 0, 2);
 					count += len;
 					break;
 				case 'o':
 					n = va_arg(ap, int);
-					len = convert_to_given_format(n, 8, 0);
+					len = convert_to_given_format(n, 8, 0, 3);
 					count += len;
 					break;
 				case 'X':
 					n = va_arg(ap, int);
-					len = convert_to_given_format(n, 16, 1);
+					len = convert_to_given_format(n, 16, 1, 4);
 					count += len;
 					break;
 				case 'x':
 					n = va_arg(ap, int);
-					len = convert_to_given_format(n, 16, 0);
+					len = convert_to_given_format(n, 16, 0, 4);
 					count += len;
 					break;
 				}

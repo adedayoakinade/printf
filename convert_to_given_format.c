@@ -5,13 +5,20 @@
  * @n: input number
  * @format: base number
  * @is_upper_hex: 1 for upper hex and 0 for lower.
+ * @b: bits in a given format
  * Return: lenght of string
  */
-int convert_to_given_format(int n, int format, int is_upper_hex)
+int convert_to_given_format(int n, int format, int is_upper_hex, int b)
 {
 	int len = 0, m = n, l = 0;
 
 	char *str;
+
+	if (n < 0)
+	{
+		len = convert_num(-n, b, is_upper_hex);
+		return (len);
+	}
 	while (n)
 	{
 		len++;
